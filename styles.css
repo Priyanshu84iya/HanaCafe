@@ -1,0 +1,459 @@
+* {
+    font-family: "Press Start 2P", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-skyblue: #179cff;                /* Nav + Footer background */
+    --color-light-purple: #e8d5ff;           /* Light purple background */
+    --color-light-pink: rgb(255, 188, 217);  /* Light Pink for borders and backgrounds */
+    --color-hover: #f1c2f1;                  /* Hover color for buttons */
+    --color-active: #d677d6;                 /* Active color for buttons */
+    --color-highlight: rgb(229, 71, 179);    /* for checked checkboxes and inputs */
+    --color-shadow: rgba(191, 0, 83, 0.502);
+    --color-accent: #6a1b9a;                 /* Dark purple for text accents */
+}
+.darkmode {
+    --color-skyblue: #1a0f35;                /* Nav + Footer background */
+    --color-light-purple: #d8bbff;           /* Light purple background */
+    --color-light-pink: #dda0dd;             /* Light Pink for borders and backgrounds */
+    --color-hover: #f1c2f1;                  /* Hover color for buttons */
+    --color-active: #d677d6;                 /* Active color for buttons */
+    --color-highlight: #1a0f35;              /* for checked checkboxes and inputs */
+    --color-shadow: rgba(244, 143, 177, 0.5);
+}
+
+/*Nav Section*/
+header {
+    background-color: var(--color-skyblue);
+}
+nav {
+    height: 6.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav button  {
+    background-color: var(--color-light-purple);
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    border-bottom: 2px solid rgb(223, 216, 216);
+    border-right: 2px solid rgb(223, 216, 216);
+    border-top: 2px solid var(--color-light-purple);
+    border-left: 2px solid var(--color-light-purple);
+    border-radius: 4rem;
+    box-shadow: 3px 5px 0 var(--color-shadow);
+    cursor: pointer;
+    position: relative;
+}
+#music-toggle, #theme-switch-button {
+    padding: 0.4rem;
+}
+nav button:hover {
+    background-color: var(--color-hover);
+}
+nav button:active {
+    background-color: var(--color-active);
+    box-shadow: none;
+    top: 5px;
+    left: 3px;
+}
+.menu-button {
+    margin-left: 7rem;
+    margin-right: 3rem;
+}
+#theme-switch-button {
+    margin-left: 1rem;
+    margin-right: 7.25rem;
+}
+.nav-left-side, .nav-right-side {
+    display: flex;
+}
+.cafe-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-light-purple);
+    -webkit-text-stroke: 1px rgb(143, 44, 204);
+    text-shadow: 3px 3px 5px rgb(197, 103, 214);
+    text-align:center;
+    padding-top: 4rem;
+}
+
+/*Menu Section*/
+#menu-section {
+    padding: 5rem 7rem;
+    background-color: var(--color-light-purple);
+}
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.drinks-section-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 4rem 0 3rem 0;
+    color: #4a148c;
+}
+.cakes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 3rem;
+}
+.cake-card {
+    background: white;
+    padding: 2.5rem 1.5rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--color-light-pink);
+    border-radius: 1.5rem;
+    text-align: center;
+    cursor: grab;
+}
+.cake-card:hover {
+    background-color: var(--color-light-pink);
+    border-color: white;
+    transition: 0.2s;
+    transform: scale(1.01);
+}
+.cake-card:active {
+    cursor: grabbing;
+}
+.cake-pixel-art {
+    height: 170px;
+}
+.cake-card h3 {
+    font-size: 1.1rem;
+    margin-top: 2.5rem;
+}
+.cake-card p {
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    margin-top: 1.5rem;
+    font-weight: 300;
+}
+.price-tag {
+    display: inline-block;
+    border-style: solid;
+    padding: 0.4rem;
+    border-radius: 1.5rem;
+    border-color: var(--color-light-pink);
+    font-style: italic;
+    font-size: 0.8rem !important;
+}
+
+/*Drinks Section*/
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.drink-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--color-light-pink);
+    border-radius: 1.5rem;
+    text-align: center;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+.drink-card:hover {
+    background-color: var(--color-light-pink);
+    border-color: white;
+    transform: scale(1.02);
+}
+.drink-card:active {
+    cursor: grabbing;
+}
+.drink-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.drink-card h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #6a1b9a;
+}
+.drink-card p {
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+/*Order Section*/
+#order-section {
+    background-color: var(--color-light-purple);
+    padding: 5rem 7rem 8rem 7rem;
+}
+form {
+    max-width: 670px;
+    margin: 0 auto;
+    background-color: var(--color-light-pink);
+    border-style: solid;
+    border-color: white;
+    border-radius: 1.5rem;
+    padding: 3rem 3rem;
+}
+.personal-info {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+}
+.personal-info > label {
+    font-size: 0.9rem;
+}
+.personal-info > input {
+    width: 70%;
+}
+h4 {
+    font-size: 0.9rem;
+}
+.fields {
+    margin-top: 3rem;
+    line-height: 1.5rem;
+}
+.fields > label {
+    margin-left: 2rem;
+    font-size: 0.7rem;
+    line-height: 2rem;
+    cursor: pointer;
+}
+input[type="checkbox"]{
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked {
+    background-color: var(--color-highlight);
+    border-color: var(--color-highlight);
+    box-shadow: 0px 3px 4px rgba(244, 143, 177, 0.5);
+}
+input {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 1.5rem;
+}
+textarea {
+    width: 100%;
+    height: 7rem;
+    border: none;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem 1.5rem;
+    font-size: 0.7rem;
+    line-height: 1rem;
+}
+textarea::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+input:focus, textarea:focus {
+outline: none;
+border: 2px solid var(--color-highlight);
+box-shadow: 4px 4px 5px rgba(244, 143, 177, 0.5);
+position: relative;
+}
+.order-summary {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    border: 2px solid var(--color-highlight);
+}
+.total-display h4 {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--color-highlight);
+}
+#order-total {
+    font-weight: bold;
+    color: var(--color-accent);
+}
+.submit-button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+input[type="submit"]{
+    background-color: var(--color-highlight);
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 2rem;
+    border: 2px solid white;
+    border-radius: 6.25rem;
+    cursor: pointer;
+    position: relative;
+}
+input[type="submit"]:hover {
+    box-shadow: 3px 3px 5px var(--color-shadow);
+    background-color: white;
+    color: var(--color-highlight);
+    transition: 0.3s;
+}
+input[type="submit"]:active {
+    box-shadow: none;
+    top: 3px;
+    left: 3px;
+}
+
+/*footer*/
+footer {
+    position: relative;
+    background-color: var(--color-skyblue);
+    text-align: center;
+    padding: 2rem 0;
+}
+.footer-content p {  
+    margin-bottom: 1rem;
+    color: white;
+}
+footer a {
+    color: white;
+}
+footer a:hover {
+    color: var(--color-light-pink);
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.social-icon {
+    width: 24px;
+    transition: 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.1);
+}
+.cloud-left {
+    position: absolute;
+    width: 23%;
+    left: -10px;
+    top: -30px;
+}
+.cloud-right {
+    position: absolute;
+    width: 18%;
+    right: 10px;
+    top: -10px;
+}
+
+@media (max-width: 600px) {
+  .cafe-name {
+    font-size: 0.7rem;
+    line-height: 2.5rem;
+    padding-top: 2rem;
+    text-shadow: 1px 1px 3px rgb(197, 103, 214);
+  }
+  nav {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  nav button {
+    font-size: 0.7rem;
+    height: 2rem;
+    padding: 0 1rem;
+  }
+  #music-toggle, #theme-switch-button {
+    padding: 0.4rem;
+  }
+ .menu-button {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  #theme-switch-button {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  #music-icon, #theme-switch-icon {
+    width: 16px;
+    height: 16px;
+  }
+    
+  /* Menu */  
+  .cakes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .drinks-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .drinks-section-title {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin: 3rem 0 2rem 0;
+  }
+  #menu-section {
+    padding: 4rem 3rem;
+  }
+  .section-title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 3rem;
+  }
+    
+    
+  /* Order */  
+  #order-section {
+    padding: 4rem 2rem 8rem 2rem;  
+  }
+  form {
+    padding: 2rem 2rem;
+  }
+  form label,
+  .personal-info > label,
+  .fields > label
+  {
+    font-size: 0.6rem;
+    margin: 0;
+  }
+  h4 {
+    font-size: 0.75rem;
+  }
+  input,
+  textarea {
+    font-size: 0.6rem;
+  }
+  .personal-info > input {
+    width: 70%;
+  }
+  input[type="submit"] {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .order-summary {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  .total-display h4 {
+    font-size: 0.9rem;
+  }
+
+    
+  /* Footer */
+  .footer-content p {
+    font-size: 0.7rem;
+  }
+  footer a {
+    font-size: 0.7rem;
+  }
+  .cloud-left {
+    top: -20px;
+}
+}
+

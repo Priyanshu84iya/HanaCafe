@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--tab-->
+        <title>HanaCafe (花カフェ)</title>
+        <link rel="icon" href="assets/carrot_cake.png" type="image/png">
+        <!--font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <!--CSS-->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!--Nav section-->
+        <header>
+            <nav>
+                <div class="nav-left-side">
+                    <button class="menu-button" onclick="document.getElementById('menu-section').scrollIntoView({behavior: 'smooth'})">Menu</button>
+                    <button class="order-form-button" onclick="document.getElementById('order-section').scrollIntoView({behavior: 'smooth'})">Order</button>
+                </div>
+                <div class="nav-right-side">
+                    <button id="music-toggle">
+                        <img id="music-icon" src="assets/music-off-icon.png" alt="Music Off" width="32px" height="32px">
+                    </button>
+                    <button id="theme-switch-button">
+                        <img id="theme-switch-icon" width="32px" height="32px">
+                    </button>   
+                </div>
+                <audio id="background-music" src="cozy-cafe-music.mp3" type="audio/mpeg" loop></audio>
+            </nav>
+
+            <div class="cafe-name">
+                <h1>HanaCafe (花カフェ)</h1>
+            </div>   
+
+            <div style="display: flex; justify-content: center;">
+                <img id="header-image" src="assets/day-cafe.gif" alt="HanaCafe during the day" style="width: 100%; max-width: 800px; height: auto;">
+            </div>
+        </header>
+
+        <main>
+            <!--Menu Section-->
+            <section id="menu-section">
+                <h2 class="section-title">
+                    Menu
+                </h2>
+                <div class="cakes-grid">
+                    <article class="cake-card">
+                        <img class="cake-pixel-art" src="assets/carrot_cake.png" alt="A slice of carrot cake topped with a tiny marzipan carrot">
+                        <h3 style="color:#fb8420 ">
+                            Carrot Cake
+                        </h3>
+                        <p>
+                            Slice of sunshine made from golden carrots and cozy spices
+                        </p>
+                        <p class="price-tag">
+                            ₹235
+                        </p>
+                    </article>
+
+                    <article class="cake-card">
+                        <img class="cake-pixel-art" src="assets/strawberry_cake.png" alt="A slice of strawberry cake filled and topped with a fresh strawberry">
+                        <h3 style="color: #c63228">
+                            Strawberry Cake
+                        </h3>
+                        <p>
+                            Sweet, fluffy cake with heavenly tasting strawberries
+                        </p>
+                        <p class="price-tag">
+                            ₹285
+                        </p>
+                    </article>
+                    
+                    <article class="cake-card">
+                        <img class="cake-pixel-art" src="assets/choco-banana_cake.png" alt="A slice of chocolate-banana cake, topped with banana slices and chocolate glaze">
+                        <h3 style="color: #400208">
+                            Choco-banana Cake
+                        </h3>
+                        <p>
+                            Chocolatey banana dream, made for midnight cravings
+                        </p>
+                        <p class="price-tag">
+                            ₹268
+                        </p>
+                    </article>
+                </div>
+
+                <h3 class="drinks-section-title">Beverages</h3>
+                <div class="drinks-grid">
+                    <article class="drink-card">
+                        <div class="drink-emoji">💗</div>
+                        <h4>Pink Drink</h4>
+                        <p>Refreshing strawberry-flavored drink with a hint of coconut</p>
+                        <p class="price-tag">₹185</p>
+                    </article>
+
+                    <article class="drink-card">
+                        <div class="drink-emoji">💚</div>
+                        <h4>Matcha Iced Coffee</h4>
+                        <p>Perfect blend of earthy matcha and rich coffee over ice</p>
+                        <p class="price-tag">₹210</p>
+                    </article>
+                    
+                    <article class="drink-card">
+                        <div class="drink-emoji">💜</div>
+                        <h4>Lavender Milk Tea</h4>
+                        <p>Calming lavender-infused milk tea with floral notes</p>
+                        <p class="price-tag">₹195</p>
+                    </article>
+                </div>
+            </section>
+
+            <!--Place your order section-->
+            <section id="order-section">
+                <h2 class="section-title">
+                    Place Your Order
+                </h2>
+                <form onsubmit="window.open('https://www.youtube.com/watch?v=i5T6Fnbq34c');">                    
+                    <!--Personal info-->
+                    <div class="personal-info">
+                        <label for="name">
+                            Name *
+                        </label>
+                        <input id="name" type="text" required aria-describedby="name-help" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="personal-info">
+                        <label for="email">
+                            Email *
+                        </label>
+                        <input id="email" type="email" required aria-describedby="email-help" placeholder="Enter your email address">
+                    </div>
+
+                    <!--Cake options-->
+                    <div class="fields">
+                        <h4>
+                            It's a cake time! 💃 Which flavor are you craving today?
+                        </h4>
+                        <label for="carrot-cake">
+                            🥕 Carrot Cake
+                        </label>
+                        <input id="carrot-cake" type="number" min="0" max="10">
+                        <br>
+                        <label for="strawberry-cake">
+                            🍓 Strawberry Cake
+                        </label>
+                        <input id="strawberry-cake" type="number" min="0" max="10">
+                        <br>
+                        <label for="choco-banana-cake">
+                            🍌 Choco-banana Cake
+                        </label>
+                        <input id="choco-banana-cake" type="number" min="0" max="10">
+                    </div>
+                    
+
+                    <!--Drink options-->
+                    <div class="fields">
+                        <h4>
+                            What would you like to drink?
+                        </h4>
+                        <label for="pink-drink">
+                            💗 Pink Drink
+                        </label>
+                        <input id="pink-drink" type="number" min="0" max="10">
+                        <br>
+                        <label for="matcha-iced-coffee">
+                            💚 Matcha Iced Coffee
+                        </label>
+                        <input id="matcha-iced-coffee" type="number" min="0" max="10">
+                        <br>
+                        <label for="lavender-milk-tea">
+                            💜 Lavender Milk Tea
+                        </label>
+                        <input id="lavender-milk-tea" type="number" min="0" max="10">
+                    </div>
+                  
+
+                    <!--Sides-->
+                    <div class="fields">
+                        <h4>
+                            Would you like something on the side?
+                        </h4>
+                        <label for="vanilla-ice-cream">
+                        <input id="vanilla-ice-cream" type="checkbox">
+                            🍨 Vanilla ice-cream
+                        </label>
+                        <br>
+                        <label for="chocolate-dipping-sauce">
+                        <input id="chocolate-dipping-sauce" type="checkbox">
+                            🍫 Chocolate dipping sauce
+                        </label>
+                        <br>
+                        <label for="cup-of-fruits">
+                        <input id="cup-of-fruits" type="checkbox">
+                            🍍 Small cup of fresh fruit
+                        </label>
+                    </div>
+
+
+                    <!--Special requests-->
+                    <div class="fields">
+                        <h4>
+                            Let us know if you have any special requests or want to add a message.
+                        </h4>
+                        <textarea placeholder="Add notes like no nuts, extra napkins, or gift wrap it please."></textarea>  
+                    </div>
+
+                    <!--Checkout button-->
+                    <div class="order-summary">
+                        <div class="total-display">
+                            <h4>Order Total: <span id="order-total">₹0</span></h4>
+                        </div>
+                    </div>
+
+                    <div class="submit-button-wrapper">
+                        <input type="submit" value="Go To Checkout 💃">
+                    </div>
+                </form>
+            </section>
+
+            <!--Footer-->
+            <footer>
+                <img class="cloud-left" src="assets/cloud-big.png" alt="Big cloud pixel art">
+               
+                <div class="footer-content">
+                     <p>
+                        Made with love by <a href="https://discord.com/channels/@me/986668410685521940" target="_blank">@pry_uchiha</a>
+                    </p>
+                    <div class="footer-icons">
+                        <a href="https://github.com/Priyanshu84iya/" target="_blank">
+                            <img class="social-icon" src="assets/github-icon.png" alt="GitHub icon">
+                        </a>
+                        <a href="https://www.instagram.com/pry_uchiha/" target="_blank">
+                            <img class="social-icon" src="assets/ig-icon.png" alt="Instagram icon">
+                        </a>
+                    </div>
+                </div>
+               
+                <img class="cloud-right" src="assets/cloud-small.png" alt="small cloud pixel art">
+            </footer>
+        </main>
+
+        <!-- Enhanced JavaScript with order calculation -->
+        <script>
+            // Menu prices in Indian Rupees
+            const prices = {
+                'carrot-cake': 235,
+                'strawberry-cake': 285,
+                'choco-banana-cake': 268,
+                'pink-drink': 185,
+                'matcha-iced-coffee': 210,
+                'lavender-milk-tea': 195
+            };
+
+            // Order calculation functionality
+            function calculateTotal() {
+                let total = 0;
+                
+                // Calculate cake and drink totals
+                Object.keys(prices).forEach(itemId => {
+                    const input = document.getElementById(itemId);
+                    if (input && input.type === 'number') {
+                        const quantity = parseInt(input.value) || 0;
+                        total += quantity * prices[itemId];
+                    }
+                });
+                
+                // Update total display
+                const totalDisplay = document.getElementById('order-total');
+                if (totalDisplay) {
+                    totalDisplay.textContent = `₹${total}`;
+                }
+            }
+
+            // Add event listeners to all quantity inputs
+            document.addEventListener('DOMContentLoaded', function() {
+                Object.keys(prices).forEach(itemId => {
+                    const input = document.getElementById(itemId);
+                    if (input) {
+                        input.addEventListener('input', calculateTotal);
+                        input.addEventListener('change', calculateTotal);
+                    }
+                });
+                
+                // Initial calculation
+                calculateTotal();
+            });
+
+            /*Background Music*/
+            const musicToggle = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            const backgroundMusic = document.getElementById('background-music');
+
+            let isPlaying = false;
+
+            musicToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    backgroundMusic.pause();
+                    musicIcon.src = 'assets/music-off-icon.png';
+                    musicIcon.alt = 'Music Off';
+                } else {
+                    backgroundMusic.play().catch(e => {
+                        console.log('Audio play failed:', e);
+                    });
+                    musicIcon.src = 'assets/music-on-icon.png';
+                    musicIcon.alt = 'Music On';
+                }
+                isPlaying = !isPlaying;
+            });
+
+            /*Dark-Light mode*/
+            const themeSwitch = document.getElementById('theme-switch-button');
+            const themeSwitchIcon = document.getElementById('theme-switch-icon');
+            const headerImage = document.getElementById('header-image');
+
+            const enableDarkmode = () => {
+                document.body.classList.add('darkmode');
+                themeSwitchIcon.src = 'assets/sun-icon.png';
+                themeSwitchIcon.alt = 'Light Mode';
+                headerImage.src = 'assets/night-cafe.gif';
+                headerImage.alt = 'HanaCafe at night';
+            };
+
+            const disableDarkmode = () => {
+                document.body.classList.remove('darkmode');
+                themeSwitchIcon.src = 'assets/moon-icon.png';
+                themeSwitchIcon.alt = 'Dark Mode';
+                headerImage.src = 'assets/day-cafe.gif';
+                headerImage.alt = 'HanaCafe during the day';
+            };
+
+            // Initialize theme
+            disableDarkmode();
+
+            themeSwitch.addEventListener('click', () => {
+                if (!document.body.classList.contains('darkmode')) {
+                    enableDarkmode();
+                } else {
+                    disableDarkmode();
+                }
+            });
+
+            // Form validation
+            document.querySelector('form').addEventListener('submit', function(e) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const total = document.getElementById('order-total').textContent;
+                
+                if (!name || !email) {
+                    e.preventDefault();
+                    alert('Please fill in all required fields (Name and Email).');
+                    return false;
+                }
+                
+                if (total === '₹0') {
+                    e.preventDefault();
+                    alert('Please select at least one item to order.');
+                    return false;
+                }
+                
+                // If validation passes, show confirmation
+                alert(`Thank you ${name}! Your order total is ${total}. Redirecting to checkout...`);
+            });
+        </script>
+    </body>
+</html>
+
+
+
